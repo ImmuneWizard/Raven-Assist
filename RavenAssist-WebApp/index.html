@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RA</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" type="text/css" href="style.css">
+
+      <script src="libraries/p5.js"></script>
+      <script src="libraries/p5.dom.js"></script>
+      <script src="libraries/p5.sound.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+      <script src="sketch.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<div class="container">
+
+    <div id ="header1">
+        <h1 class="title1">Raven Assist</h1>
+    </div>
+
+    <div id ="body">
+        <div class="row">
+            <!-- side bar -->
+            <div class="col s12 m4 l3" id="victimList"></div>
+            <!-- map -->
+            <div class="col s12 m8 l9">
+              <div id="map"></div>
+              <script>
+                function initMap() {
+                  var uluru = {lat: -25.363, lng: 131.044};
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 10,
+                    center: uluru
+                  });
+                  var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                  });
+                }
+              </script>
+              <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdYCWLm0xlp8TWnRn3dvhebjVnM8fFBho&callback=initMap">
+              </script>
+            </div>
+          </div>
+    </div>
+
+    <div id ="footer1">
+      <h6 class="title1"> Saving lives </h6>
+    </div>
+</div>
+  </body>
+</html>
